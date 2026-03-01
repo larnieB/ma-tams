@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-script: "Dancing Script", cursive;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-vapor-pink: #ff7eb9;
+  --color-vapor-lavender: #be9fe1;
+  --color-vapor-cyan: #70e1f5;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-zinc-900 antialiased selection:bg-vapor-pink/30;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-vapor-pink via-vapor-lavender to-vapor-cyan;
+  }
+}
